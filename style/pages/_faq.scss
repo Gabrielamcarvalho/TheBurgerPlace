@@ -1,0 +1,79 @@
+@import '../global/_fontsandcolors.scss';
+
+.faq {
+  text-align: center;
+  padding: 3em;
+  background-color: $background-color-grey; //from variable
+  color: $primary-color; //from variable
+
+  &-title {
+    color: $highlight; //from variable
+    margin-bottom: 2em;
+  }
+}
+.question {
+  margin: 2em 1em;
+  background: $secondary-color;
+  color: $primary-color;
+  border-radius: $border-radius;
+  box-shadow: 12px 21px 17px -2px rgba(122, 122, 122, 0.58); //adding box shadow with one shade
+  padding: 1.5rem 1.5rem 0 1.5rem;
+
+  &-title {
+    display: flex;
+    justify-content: space-between; //space between elements
+    align-items: center;
+    text-transform: capitalize;
+    padding-bottom: 1rem;
+  }
+
+  &-faq {
+    margin-bottom: 0;
+  }
+
+  &-btn {
+    outline: none;
+    font-size: 1.5rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    color: $highlight;
+    transition: 1s;
+
+    //hover effect
+    &:hover {
+      transform: rotate(90deg); //btn will rotate 90 degrees
+    }
+  }
+
+  &-text {
+    padding: 1rem 0 1.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+    .answer-faq {
+      margin-bottom: 0;
+    }
+  }
+
+  // screens bigger than 700px
+  @media screen and (min-width: 700px) {
+    margin: 2em;
+  }
+}
+
+// dealing with effect to show answer when btn clicked
+.question-text {
+  display: none;
+}
+.show-text .question-text {
+  display: block;
+}
+.minus-icon {
+  display: none;
+}
+.show-text .minus-icon {
+  display: inline;
+}
+.show-text .plus-icon {
+  display: none;
+}

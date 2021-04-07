@@ -1,0 +1,211 @@
+//import fonts and colors
+@import '../global/fontsandcolors';
+
+// ------------------------------------ HOME PAGE -----------------------------------------------
+// hero section
+.hero {
+  // picture from pexels.com
+  background: linear-gradient(rgba(1, 2, 8, 0.514), rgba(255, 253, 253, 0.151)),
+    url('../images/hero.jpeg'); //adding layer effect to make image darker
+  background-size: cover;
+  background-position: center center; //center of page center of image
+  width: 100%;
+  height: calc(100vh - 70px); //100vh minus the height of the navigation bar
+  margin-top: 0;
+  padding-top: 0;
+  overflow: hidden; //if there is overflow
+  position: relative; //because icons will have position absolute
+
+  .banner {
+    display: flex;
+    flex-direction: column; //beside each other
+    justify-content: center;
+    align-items: flex-start; //left
+    margin-left: 2em;
+    max-width: 50ch; //50 ch in each line max
+    height: 100%;
+  }
+
+  .btns {
+    margin-top: 1.5rem;
+  }
+}
+
+.social-media-icons {
+  position: absolute; //so can put icons in the exact position on the banner
+  right: 20px; //from the right of the page
+  top: 10px; //from the top of the page
+
+  .fa {
+    font-size: 2rem;
+    color: $secondary-color; //from variables
+    margin-left: 0.2rem;
+  }
+
+  //hover effect
+  .fa:hover {
+    color: $highlight;
+  }
+}
+
+//newsletter / reviews /social media section
+.news-social-media {
+  background-color: $secondary-color; //from variable
+  color: $primary-color; //from variable
+
+  .newsletter-container {
+    padding: 2em 0;
+    margin: 0 2em;
+    text-align: center;
+  }
+
+  .reviews-container {
+    padding: 2em 0;
+    margin: 0 2em;
+    text-align: center;
+  }
+
+  //giving colors and margin to the titles
+  .follow-us,
+  .review-us,
+  .subscribe {
+    margin-bottom: 0.6em;
+    color: $highlight;
+  }
+
+  .divisor {
+    position: relative;
+    // adding line in the middle vertically
+    left: 25%;
+    text-align: center;
+    width: 50%;
+    margin-top: 2em;
+    height: 1px;
+    background-color: $primary-color; //from variable
+  }
+
+  .follow-us-container {
+    margin: 2em 2em 0;
+    padding-bottom: 2em;
+    text-align: center;
+  }
+
+  // selecting the p tags children of follow us container and newsletter container and review us container
+  .follow-us-container > p,
+  .newsletter-container > p,
+  .reviews-container > p {
+    margin-bottom: 0.5em;
+    font-weight: 300;
+  }
+}
+
+//aligning button on center
+.reviews-btn {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+// subscribe form - review form
+.subscribe-form {
+  padding: 1em;
+  display: flex;
+  flex-direction: column; //beside each other
+
+  .newsletter-firstName,
+  .newsletter-lastName,
+  .newsletter-email {
+    width: 100%;
+    outline: none;
+    border: 1px solid $secondary-color;
+    padding: 0.5rem;
+    border-radius: $border-radius;
+  }
+
+  //media query for screen bigger than 700px
+  @media screen and (min-width: 700px) {
+    flex-direction: row;
+  }
+}
+
+.reviews-form {
+  padding: 1em;
+  display: flex;
+  flex-direction: column; //beside each other
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .reviews-firstName,
+    .reviews-email {
+      outline: none;
+      border: 1px solid $secondary-color;
+      padding: 0.5rem;
+      border-radius: $border-radius;
+    }
+  }
+
+  .review {
+    outline: none;
+    border: 1px solid $secondary-color;
+    border-radius: $border-radius;
+    padding: 0.5rem;
+    width: 100%;
+    font-family: $secondary-font;
+  }
+
+  //media query for screen bigger than 700px
+  @media screen and (min-width: 700px) {
+    // just one row with 4 columns
+    flex-direction: row;
+
+    .input {
+      width: 40%;
+    }
+
+    .review {
+      width: 60%;
+    }
+  }
+}
+
+.social-media_images-container {
+  margin-top: 1em;
+  display: grid;
+  // one column and 4 rows
+  grid-template-columns: 1fr;
+  width: 100%;
+
+  .social-media-img-container {
+    cursor: pointer;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: $border-radius;
+    box-shadow: 1px 1px 3px 1px rgba(17, 2, 2, 0.5); //adding shadow
+    filter: grayscale(1); //transforming image in back/white
+    transition: all 0.7s; //hover effect will last .7s
+
+    img {
+      border-radius: $border-radius;
+      width: 100%;
+      height: 100%;
+    }
+
+    //hover effect
+    &:hover {
+      filter: grayscale(0); //taking the grayscale effect off
+    }
+  }
+
+  // media query for screen bigger than 500px
+  @media screen and(min-width: 500px) {
+    // it is going to appear 2 columns and 2 rows
+    grid-template-columns: 1fr 1fr;
+  }
+  //media query for screen bigger than 700px
+  @media screen and (min-width: 700px) {
+    // just one row with 4 columns
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

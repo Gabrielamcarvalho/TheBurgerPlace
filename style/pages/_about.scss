@@ -1,0 +1,48 @@
+//import fonts and colors
+@import '../global/fontsandcolors';
+
+.about {
+  background-color: $highlight; //from variable
+  padding: 2em;
+  text-align: center;
+  color: $primary-color; //from variable
+
+  &-title {
+    margin-bottom: 2em;
+  }
+
+  .history-img_container,
+  .team-img_container,
+  .burger-img_container {
+    // width is gonna take 90% of the page in small screens, max is gonna be 600px
+    width: 90%;
+    max-width: 600px;
+    margin: 2em auto; //auto so it aligns in the middle
+    border-radius: $border-radius;
+  }
+
+  img {
+    width: 100%;
+    border-radius: $border-radius;
+    box-shadow: 12px 21px 17px -2px rgba(122, 122, 122, 0.58); //adding shadow on the images
+  }
+
+  .meet-team,
+  .meet-burger,
+  .meet-history {
+    text-transform: uppercase;
+  }
+
+  .history-content,
+  .team-content {
+    text-align: justify;
+  }
+}
+
+.team {
+  margin: 4em 0 2em 0;
+
+  .team-content {
+    margin-top: 2em;
+  }
+}

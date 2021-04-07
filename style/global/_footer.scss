@@ -1,0 +1,114 @@
+@import '_general.scss';
+
+// ---------------------------------------FOOTER ----------------------------------------------
+.footer {
+  background-color: $primary-color; //getting color from variable
+  padding: 3em 0;
+  color: $secondary-color; //getting color from variable
+
+  .footer_top {
+    display: flex; //using display flex
+    flex-direction: column; //top of each other
+    justify-content: space-between; //space between the elements
+    margin: 0 2em 2em;
+
+    // selecting all the h4 children of opening-hours
+    .opening-hours > h4 {
+      margin: 1em 0 0.5em;
+    }
+    // selecting all the h4 children of location
+    .location > h4 {
+      margin: 1em 0 0.5em;
+    }
+  }
+  .footer-bottom {
+    margin: 2em;
+
+    .footer-link {
+      margin-right: 1em;
+      text-transform: uppercase;
+      color: $secondary-color; //color from variable
+      letter-spacing: 0.11rem;
+      line-height: 1.4;
+
+      //adding hover and focus effect
+      &:hover,
+      &:focus {
+        border-bottom: 2px solid $secondary-color;
+      }
+      //when user clicks
+      &:active {
+        border-bottom-style: dashed;
+      }
+    }
+    .copyright {
+      margin-top: 1em;
+      color: $background-color-grey; //color from variable
+    }
+
+    .img-copyright {
+      font-size: 0.7rem;
+    }
+  }
+
+  .footer_social-media {
+    display: flex; //display flex
+    flex-direction: row; //beside each other
+    justify-content: space-between;
+    margin-top: 2em;
+  }
+  .footer_social-media-icons {
+    cursor: pointer;
+    position: relative; //giving position relative so the icon will be absolute
+    width: 50px;
+    height: 50px;
+    border: 2px solid $highlight;
+    border-radius: 50%;
+
+    .footer-fa {
+      position: absolute; //to center it better
+      color: $highlight;
+      font-size: 1.5rem;
+      // centering icon inside container
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10; //so it gets in a top layer
+    }
+
+    //adding hover and focus
+    &:hover,
+    &:focus {
+      background-color: $highlight; //color from variable
+    }
+    
+    //adding hover effect
+    &:hover .footer-fa {
+      color: $primary-color;
+    }
+
+    //when user clicks
+    &:active {
+      transform: scale(1.1); //btn gets bigger
+    }
+  }
+
+  .opening-hours_weekends,
+  .opening-hours_weekdays,
+  .take-away_weekends,
+  .take-away_weekdays,
+  .footer_phone,
+  .footer_address,
+  .footer_email {
+    font-weight: 300;
+    letter-spacing: 0.13rem;
+    line-height: 1.4;
+  }
+
+  // formatting for screens bigger than 600px
+  @media screen and(min-width: 600px) {
+    .footer_top {
+      flex-direction: row; //beside each other
+    }
+  }
+}

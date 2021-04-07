@@ -1,0 +1,116 @@
+@import '_fontsandcolors.scss';
+
+// ------------------------ GENERAL -------------------------------------------
+* { //in the entire page
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//in the entire page
+html {
+  scroll-behavior: smooth; //nice scroll effect
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $secondary-font; //from variable
+  margin: 0;
+}
+
+//all the a elements
+a {
+  text-decoration: none;
+  font-family: $secondary-font;
+}
+
+//all ul elements
+ul{
+  list-style: none;
+}
+
+//headings
+h1 {
+  font-family: $primary-font;
+  color: $secondary-color;
+  // font-size: 4rem;
+  font-size: clamp(3rem, 1vw, 5rem); //size of font will change depenting of screen size
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  line-height: 1.2;
+}
+// subtitle
+h2 {
+  color: $secondary-color;
+  // font-size: 1.5rem;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 1vw, 3rem); //size of the font will change depending on screen size
+}
+
+// titles
+h3 {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 800;
+}
+// small titles
+h4 {
+  letter-spacing: 0.15rem;
+}
+
+//button
+.btn {
+  cursor: pointer;
+  color: $highlight; //from variable
+  background-color: transparent;
+  width: 150px;
+  height: 35px;
+  border-radius: $border-radius; //from variable
+  border: 2px solid $highlight;
+  padding: 0.5rem 1.5rem;
+  font-family: $secondary-font;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  //adding a shadow in the inside of the button eith tree shades
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 1s; //transition of the hover effect lasts 1s
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    // button will bright 20%
+    filter: brightness(1.2);
+  }
+  //when clicked
+  &:active {
+    border-radius: 10px;
+  }
+}
+
+.btn-2 {
+  cursor: pointer;
+  background-color: $highlight; //from variable
+  color: $primary-color; //from variable
+  font-family: $primary-font; //from variable
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  padding: 1em;
+  outline: none;
+  border: 1px solid $highlight; //from variable
+  border-radius: $border-radius;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $primary-color;
+    background-color: transparent;
+  }
+
+  &:active {
+    font-style: italic;
+  }
+}
+
+

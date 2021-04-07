@@ -1,0 +1,143 @@
+//import fonts and colors
+@import '../global/fontsandcolors';
+
+.careers {
+  background-color: $background-color-grey; //from variable
+  padding: 2em;
+
+  &-title {
+    padding: 2em 0;
+    color: $highlight; //from variable
+    text-align: center;
+  }
+  .nav-careers {
+    background-color: $primary-color; //from variable
+    padding: 1em 0.5em;
+    color: $secondary-color; //from variable
+
+    .careers-logo {
+      font-family: $primary-font; //from variable
+    }
+    ul {
+      display: flex; //flex
+      flex-direction: row; //side to side
+      justify-content: space-between; //space betwen elements
+    }
+    .careers-menu {
+      display: flex;
+      flex-direction: row; //side to side
+    }
+  }
+
+  .careers-menu_item {
+    text-decoration: none;
+    margin-right: 0.5em;
+    color: $highlight;
+    transition: 0.5s all; //adding duration of .5s in all affects
+
+    //hover affect
+    &:hover {
+      color: $secondary-color;
+    }
+
+    //when clicked or focused
+    &:active,
+    &:focus {
+      font-weight: 600;
+    }
+  }
+}
+
+.careers-container {
+  background-color: $primary-color; //from variabel
+  margin: 2em 0;
+  min-height: 400px;
+  color: $secondary-color; //from variable
+  border-radius: $border-radius; //from variable
+}
+
+.container-1 {
+  display: flex;
+  flex-direction: column; //top of each other
+  //aligning everything in the center
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  padding: 2em 0;
+
+  .career-btn {
+    margin: 2em 0;
+
+    //hover and focus
+    &:hover,
+    &:focus {
+      background-color: $primary-color; //from variable
+      border: 2px solid $highlight;
+      color: $highlight;
+    }
+    //when click
+    &:active {
+      transform: rotate(15deg); //btn will rotate
+    }
+  }
+}
+
+.container-2 {
+  padding: 2em 0;
+  text-align: center;
+
+  .jobs {
+    display: grid; //grid
+    grid-template-columns: 1fr 1fr; //the width of the container will be divided in 2 parts with the same width
+
+    .job {
+      color: $highlight;
+      margin: 2em;
+      padding: 2em 0;
+      position: relative;
+      border-radius: 15px;
+      border: 2px solid $highlight;
+    }
+  }
+}
+
+.container-3 {
+  display: flex;
+  flex-direction: column; //top of each other
+  //center elements
+  justify-content: center;
+  align-items: center;
+
+  .careers-img_container {
+    width: 90%;
+
+    img {
+      width: 100%;
+      //border just on the left
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+  }
+  .quote {
+    width: 90%;
+    padding: 1em;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+
+  .quote-author{
+     font-style: italic;
+  }
+
+  // screens bigger than width 700px
+  @media screen and(min-width:700px) {
+    flex-direction: row; //beside each other
+
+    .careers-img_container {
+      width: 50%;
+    }
+    .quote {
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+//import fonts and colors
+@import 'global/fontsandcolors';
+
+// importing tags styling
+@import 'global/_general.scss';
+
+//importing navigation bar styling
+@import 'global/_navigation.scss';
+
+//importing footer styling
+@import 'global/_footer.scss';
+
+//importing home page styling
+@import 'pages/_index.scss';
+
+//importing contact page styling
+@import 'pages/_contact.scss';
+
+//importing faq page styling
+@import 'pages/_faq.scss';
+
+//importing about page styling
+@import 'pages/_about.scss';
+
+//importing menu page styling
+@import 'pages/_menu.scss';
+
+//importing careers page styling
+@import 'pages/_careers.scss';
+
+@import 'pages/_reviews.scss';

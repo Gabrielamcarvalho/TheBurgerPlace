@@ -1,0 +1,71 @@
+@import '../global/_fontsandcolors.scss';
+
+.menu {
+  padding: 2em;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+    url(../images/menubackground.jpg); //adding layer on image so it gets darker
+  background-size: cover; 
+  background-position: center center; //centering
+  width: 100%;
+  color: $secondary-color; //from variable
+  font-size: 0.7rem;
+  text-align: center;
+
+  &-title{
+      margin-bottom: 2em;
+      color: $highlight;
+  }
+  
+  &-container{
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)); //adding background effect will darker shade 
+    border-radius: $border-radius; //effect from variable
+      margin-bottom: 2em;
+      padding-bottom: 4em;
+  }
+  .menu-item{
+      padding: 2em 0;
+
+      &_title{
+          color: $highlight;
+          margin: 0.5em 0;
+          font-weight: 800;
+          font-size: 1.2rem;
+      }
+
+      .menu-items_details-title{
+         margin-bottom: 0.5em;
+         font-weight: 800;
+      }
+
+      .data-detail{
+          letter-spacing: 0.06rem;
+          line-height: 1.4;
+          padding: 0.3em 0;
+      }
+  }
+  .menu-btn{
+      margin-bottom: 2em;
+  }
+
+//   screens bigger than 700px
+  @media screen and(min-width: 700px) {
+      font-size: 1rem;
+  }
+}
+
+//in this classes the width will be divided in 3 fractions with the same size
+.burger, .burger-data, .chicken, .chicken-data{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+//in this classes the width will be divided in 2 fractions with the same size
+.fries, .fries-data, .drinks, .drinks-data{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+//in this classes the width will be divided in 5 fractions with the same size
+.meals, .meals-data{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}

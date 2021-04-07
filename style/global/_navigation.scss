@@ -1,0 +1,88 @@
+@import '_general.scss';
+
+.navbar {
+  background-color: $primary-color; //color from variable
+
+  .logo {
+    font-family: $primary-font; //color from variable
+    display: inline-block;
+    font-size: 2rem;
+    margin-top: 15px;
+    margin-left: 20px;
+    color: $highlight; //color from variable
+  }
+
+  .main-nav {
+    text-align: center;
+    margin: 15px auto 0;
+    padding-bottom: 1rem;
+    background-color: $primary-color; //color from variable
+    list-style-type: none;
+    // when is small screens, it won't appear
+    display: none;
+  }
+
+  .nav-links {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    color: $secondary-color; //color from variable
+    line-height: 1.5;
+    transition: all 0.7s;
+
+    &:hover {
+      color: $highlight; //color from variable
+    }
+    &:active {
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  .nav-active {
+    color: $highlight; //getting color from variable
+  }
+
+  .navbar-toggle {
+    position: absolute;
+    color: $highlight; //getting color from variable
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.2s; //adding transition affect for duration .2s
+  }
+  .active {
+    display: flex; //flex
+    flex-direction: column;
+    justify-content: space-around; //space around the elements
+  }
+  .rotate {
+    transform: rotate(90deg);
+  }
+
+  //media query for screen bigger than 700px
+  @media screen and (min-width: 700px) {
+    display: flex; //flex
+    justify-content: space-between; //separate space between elements
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+
+    .main-nav {
+      // it will appear
+      display: flex; //using display flex
+      margin-right: 15px;
+      margin-top: 15px;
+      flex-direction: row; 
+      justify-content: flex-end; //right
+    }
+
+    .nav-links {
+      padding: 0 1rem;
+    }
+    .navbar-toggle {
+      // toggle button will disappear
+      display: none;
+    }
+  }
+}

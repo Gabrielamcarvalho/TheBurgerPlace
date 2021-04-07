@@ -1,0 +1,73 @@
+//import fonts and colors
+@import '../global/fontsandcolors';
+
+.contact {
+  margin: auto auto; //center
+  text-align: center;
+  background: linear-gradient(rgba(0, 2, 10, 0.671), rgba(20, 1, 1, 0.678)),
+    url(../images/contactbackground.jpg); //adding a layer in the background so the image isn't as bright 
+  background-position: center; //aligning background in center
+  background-size: cover; //cover 100% of the width/height
+  height: 100vh; //100 view hights
+
+  .contact-title {
+    padding: 2em 0;
+    color: $highlight; //from variable
+  }
+
+  
+}
+
+.contact-box {
+  margin: 0 auto;
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column; //top of each other
+  //centering
+  align-items: center;
+  justify-content: center;
+  //   creating transparent background
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  color: $secondary-color;
+  //it will grow to max 600px
+  width: 350px;
+  max-width: 600px;
+  border-radius: $border-radius;
+
+  label {
+    margin: 0.5em;
+  }
+
+  .field,
+  .area {
+    width: 300px;
+    border-radius: $border-radius;
+
+    &:active {
+      outline: none;
+    }
+ 
+  }
+
+  .field {
+    height: 1.5rem;
+    padding: 0.3rem;
+  }
+
+  .contact-btn {
+    margin-top: 2em;
+  }
+
+  //screen bigger than 700px width
+  @media screen and (min-width:700px) {
+    width: 400px;
+  }
+
+}
+
+//formatting red text class for form errors
+.red-text {
+  color: rgb(223, 68, 68) !important;
+  font-weight: 200;
+  font-size: 1rem;
+}
